@@ -109,31 +109,11 @@ basic.forever(function () {
 
 
 
-> Diese Seite bei [https://r00b1nh00d.github.io/einfachealarmanlage/](https://r00b1nh00d.github.io/einfachealarmanlage/) öffnen
+## Als Tutorial verwenden
 
-## Als Erweiterung verwenden
+Dieses Repository kann als **Tutorial** für MakeCode verwenden.
 
-Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
-
-* öffne [https://makecode.calliope.cc/](https://makecode.calliope.cc/)
-* klicke auf **Neues Projekt**
-* klicke auf **Erweiterungen** unter dem Zahnrad-Menü
-* nach **https://github.com/r00b1nh00d/einfachealarmanlage** suchen und importieren
-
-## Dieses Projekt bearbeiten ![Build Status Abzeichen](https://github.com/r00b1nh00d/einfachealarmanlage/workflows/MakeCode/badge.svg)
-
-Um dieses Repository in MakeCode zu bearbeiten.
-
-* öffne [https://makecode.calliope.cc/](https://makecode.calliope.cc/)
-* klicke auf **Importieren** und dann auf **Importiere URL**
-* füge **https://github.com/r00b1nh00d/einfachealarmanlage** ein und klicke auf Importieren
-
-## Blockvorschau
-
-Dieses Bild zeigt den Blockcode vom letzten Commit im Master an.
-Die Aktualisierung dieses Bildes kann einige Minuten dauern.
-
-![Eine gerenderte Ansicht der Blöcke](https://github.com/r00b1nh00d/einfachealarmanlage/raw/master/.github/makecode/blocks.png)
+öffne dazu den Link: [https://makecode.calliope.cc/#tutorial:https://github.com/r00b1nh00d/einfacheAlarmanlage]
 
 #### Metadaten (verwendet für Suche, Rendering)
 
