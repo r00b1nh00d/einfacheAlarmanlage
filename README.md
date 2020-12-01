@@ -17,12 +17,12 @@ Nutze dazu die ``||basic:dauerhaft||`` - Schleife. In diese kommt eine ``||logic
 In die Bedingung (also die kleine Raute im Block) kommt ein Größer-Kleiner-Vergleich. Diesen findest du ebenfalls im Bereich ``||logic:Logik||``. <br>
 In diesen Vergleich kommt noch der Block zum Messen der ``||input:Lichtstärke||``. Die ``||input:Lichtstärke||`` findest du im Bereich ``||input:Eingabe||``. <br>
 Als Anweisung, also wenn die Bedingung erfüllt ist, soll ein mittleres c abgespielt werden. Diesen Ton findest du im Bereich ``||music: Musik||`` <br>
-Setze vor dem Test noch eine Zahl wie z.B. 50 in den Vergleich, dieser Wert könnte schon passen. Jeztzt kannst du das Programm schonmal auf deinen Calliope laden und testen, was passiert, wenn du die Hand über die LED-Anzeige hältst. <br>
+Setze vor dem Test noch eine Zahl wie z.B. 80 in den Vergleich, dieser Wert könnte schon passen. Jeztzt kannst du das Programm schonmal auf deinen Calliope laden und testen, was passiert, wenn du die Hand über die LED-Anzeige hältst. <br>
 Dies kannst du auch mehrmals mit verschiedenen Zahlen versuchen und schauen, welche am besten passt. 
 
 ```blocks
 basic.forever(function () {
-    if (input.lightLevel() > 50) {
+    if (input.lightLevel() > 80) {
         music.playTone(262, music.beat(BeatFraction.Whole))
     }
 })
@@ -59,7 +59,7 @@ basic.forever(function () {
  
     if (ScharfGeschaltet) {
 
-        if (input.lightLevel() > 50) {
+        if (input.lightLevel() > 80) {
             while (ScharfGeschaltet) {
                
                 music.playTone(262, music.beat(BeatFraction.Whole))
@@ -74,7 +74,7 @@ basic.forever(function () {
 ## Schritt 3 Einschaltverzögerung
 Dir ist jetzt vielleicht aufgefallen, dass die Alarmanlage sofort anspringt, wenn der Schwellwert überschritten wurde. Das macht es ziemlich schwer, die Calliope Alarmanlage in die Box zu legen, ohne dass diese direkt ausgelöst wird. 
 Dazu bauen wir in den ``||basic: dauerhaft||`` Block noch vor der Abfrage, ob die Alarmanlage scharf geschaltet ist, eine weitere Abfrage ein, welche einen ``||variables: timer||`` Status checken soll.
-Ist der ``||variables: timer||`` gleich 1, soll eine Sekunde gewartet werden und der Timer auch gleich wieder auf 0 zurückgesetzt werden. <br>
+Ist der ``||variables: timer||`` gleich 1, soll drei Sekunden gewartet werden und anschließend der Timer auch gleich wieder auf 0 zurückgesetzt werden. <br>
 Den Timer lassen wir ebenfalls mit einem Knopfdruck von A und B auf 1 setzen. 
  
 ```blocks
@@ -91,12 +91,12 @@ let ScharfGeschaltet = false
 ScharfGeschaltet = false
 basic.forever(function () {
     if (timer < 10) {
-        basic.pause(1000)
+        basic.pause(3000)
            timer = 0
     }
     if (ScharfGeschaltet) {
         basic.setLedColor(0x00ff00)
-        if (input.lightLevel() > 50) {
+        if (input.lightLevel() > 80) {
             while (ScharfGeschaltet) {
                 basic.setLedColor(0xff0000)
                 music.playTone(262, music.beat(BeatFraction.Whole))
