@@ -74,7 +74,7 @@ basic.forever(function () {
 ## Schritt 3 Einschaltverzögerung
 Dir ist jetzt vielleicht aufgefallen, dass die Alarmanlage sofort anspringt, wenn der Schwellwert überschritten wurde. Das macht es ziemlich schwer, die Calliope Alarmanlage in die Box zu legen, ohne dass diese direkt ausgelöst wird. 
 Dazu bauen wir in den ``||basic: dauerhaft||`` Block noch vor der Abfrage, ob die Alarmanlage scharf geschaltet ist, eine weitere Abfrage ein, welche einen ``||variables: timer||`` Status checken soll.
-Ist der ``||variables: timer||`` gleich 1, soll eine Sekunde gewartet werden und der Timer auch gleich wieder auf 0 gesetzt werden. <br>
+Ist der ``||variables: timer||`` gleich 1, soll eine Sekunde gewartet werden und der Timer auch gleich wieder auf 0 zurückgesetzt werden. <br>
 Den Timer lassen wir ebenfalls mit einem Knopfdruck von A und B auf 1 setzen. 
  
 ```blocks
@@ -90,8 +90,9 @@ let timer = 0
 let ScharfGeschaltet = false
 ScharfGeschaltet = false
 basic.forever(function () {
-    if (timer == 1) {
+    if (timer < 10) {
         basic.pause(1000)
+           timer = 0
     }
     if (ScharfGeschaltet) {
         basic.setLedColor(0x00ff00)
